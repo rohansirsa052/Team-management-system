@@ -137,5 +137,5 @@ app.post("/users", async (req, res) => {
   });
 
   
-const port = process.env.PORT || 8070;
+const port = process.env.PORT;
 app.listen(port, () => console.log(`Server running at ${port}`));
