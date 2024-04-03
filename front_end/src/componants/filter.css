@@ -1,0 +1,43 @@
+/* filter */
+.filters {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  .select-container {
+    position: relative;
+  }
+  
+  .select-container select {
+    appearance: none;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    font-size: 16px;
+    width: 200px;
+    cursor: pointer;
+  }
+  
+  .select-container select:focus {
+    outline: none;
+    border-color: blue;
+  }
+  
+  .select-container::after {
+    content: '\25BC';
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+  
+  /* Style for options */
+  .select-container option {
+    padding: 5px;
+  }
+  .filters_container{
+    margin: 1rem;
+  }

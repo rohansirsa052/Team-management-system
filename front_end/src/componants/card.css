@@ -1,0 +1,179 @@
+body,html{
+  height: 100%;
+}
+body {
+  background: #daa000;   
+  font-family: 'Montserrat', sans-serif;
+}
+.wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 4%;
+}
+.contanior {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2%;
+  justify-content: center;
+}
+.user-card {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   background-color: #fff;
+   border-radius: 10px;
+   padding: 40px;
+   width: 420px;
+   height: 128px;
+   position: relative;
+   overflow: hidden;
+   box-shadow: 0 2px 20px -5px rgba(0,0,0,0.5);
+}
+
+.user-card:before {
+  content: '';
+  position: absolute;
+  height: 300%;
+  width: 173px;
+  background: #262626;
+  top: -60px;
+  left: -125px;
+  z-index: 0;
+  transform: rotate(17deg);
+}
+
+.user-card-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;   
+  margin-top: -31px;
+  mix-blend-mode: multiply;
+ 
+}
+
+.user-card-img img {
+  width: 150px;
+  height: 200px;
+  margin-right: -58px;
+  object-fit: cover;
+}
+
+.user-card-info {
+  text-align: center;
+}
+
+.user-card-info h2 {
+  font-size: 24px;
+  margin: 0;
+  margin-bottom: 10px;
+  font-family: 'Bebas Neue', sans-serif;
+}
+
+.user-card-info p {
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+.user-card-info p span {
+   font-weight: 700;
+   margin-right: 10px;
+}
+.input-wrapper {
+  width: 100%;
+  height: 2.5rem;
+  border: none;
+  border-radius: 10px;
+  padding: 0 15px;
+  box-shadow: 0px 0px 8px #ddd;
+  background-color: white;
+  display: flex;
+  align-items: center;
+}
+
+input {
+  background-color: white;
+  border: 2px solid white;
+  position: relative;
+  border-radius: 24px;
+  height: 100%;
+  top: 2rem;
+  left: 39%;
+  font-size: 1.25rem;
+  width: 20%;
+  margin-left: 5px;
+}
+
+input:focus {
+  outline: none;
+}
+.search-button{
+  border: 2px solid white;
+  border-radius: 5px;
+  position: relative;
+  top: 30px;
+  left: 40%;
+}
+
+.btn{
+  border: 2px solid white;
+  border-radius: 10px;
+  position: relative;
+  width: 10%;
+  position: relative;
+  margin: auto;
+  left: 45%;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+  height: 50px;
+  cursor: pointer;
+  text-align: center;
+  
+}
+.btn:hover {
+  background-color: #262626;
+  color: #fff;
+  border-color: #262626;
+}
+#search-icon {
+  position: relative;
+  color: royalblue;
+  top: 2rem;
+  left: 39%;
+}
+@media only screen and (min-width: 768px) {
+  .user-card {
+    flex-direction: row;
+    align-items: flex-start;
+  }   
+  .user-card-img {
+    margin-right: 61px;
+    margin-top: -31px;
+  }
+
+  .user-card-info {
+    text-align: left;
+  }
+}
+
+@media (max-width: 767px){
+  .wrapper{
+     padding-top: 3%;
+  }
+  .user-card:before {
+     width: 300%;
+     height: 200px;
+     transform: rotate(0);
+  }
+  .user-card-info h2 {
+     margin-top: 25px;
+     font-size: 35px;
+  }
+  .user-card-info p span {
+     display: block;
+     margin-bottom: 15px;
+     font-size: 18px;
+  }
+}
+
+
