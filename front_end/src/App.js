@@ -14,7 +14,7 @@ const App = () => {
  
   const postsPerPage = 5;
   const showUsers = () => {
-    const serverUrl = "https://team-management-system-3.onrender.com/users";
+    const serverUrl = "https://team-management-system-4.onrender.com/users";
     return axios
       .get(serverUrl)
       .then((response) => {
@@ -27,7 +27,8 @@ const App = () => {
   };
  
   const showOneUser = (id) => {
-    const serverUrl = `https://team-management-system-3.onrender.com/users/${id}`;
+    console.log(id);
+    const serverUrl = `https://team-management-system-4.onrender.com/users/${id}`;
     return axios
       .get(serverUrl)
       .then((response) => {

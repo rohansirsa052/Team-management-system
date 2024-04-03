@@ -91,7 +91,7 @@ app.post("/users", async (req, res) => {
   app.get("/users/:first_name", async (req, res) => {
     try {
       const first_name = req.params.first_name;
-      const result = await User.findOne({ first_name });
+      const result = await User.findOne({ first_name }).maxTimeMS(20000);
   
       if (!result) {
         return res.status(404).json({ error: "User not found" });
