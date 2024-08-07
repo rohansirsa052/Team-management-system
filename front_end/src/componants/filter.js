@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import axios from "axios";
-import "./filter.css"
+import "./filter.css";
+
 const Filter = ({ setData }) => {
   const [filters, setFilters] = useState({
     domain: "",
@@ -8,13 +9,12 @@ const Filter = ({ setData }) => {
     availability: "",
   });
 
-  const showFilteredUsers = async () => {
+  const showFilteredUsers = useCallback(async () => {
     try {
-      const serverUrl = "http://localhost:8070/users";
+      const serverUrl = "https://team-management-system-6.onrender.com/users";
       const response = await axios.get(serverUrl);
       let filteredUsers = response.data;
 
-     
       if (filters.domain) {
         filteredUsers = filteredUsers.filter(
           (user) => user.domain === filters.domain
@@ -36,14 +36,11 @@ const Filter = ({ setData }) => {
     } catch (error) {
       console.error("Error receiving data:", error);
     }
-  };
+  }, [filters, setData]);
 
   useEffect(() => {
-    const fetchData = async () => {
-      await showFilteredUsers();
-    };
-    fetchData();
-  }, [filters, showFilteredUsers]);
+    showFilteredUsers();
+  }, [showFilteredUsers]);
 
   const handleFilterChange = (filterType, value) => {
     setFilters({
